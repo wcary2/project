@@ -1,0 +1,46 @@
+import Unit
+
+
+def getBattleSetup():
+    command = input("Enter Units or enter help: ")
+    if command == "help":
+        print("Help will be available in a later version")
+        getBattleSetup()
+    unitArray = [0,0,0,0,0,0,0,0,0,0]
+    parsedSet = command.split(" ")
+    for parsed in parsedSet:
+        type = parsed[0:1]
+        quantity = parsed[3]
+        if type == "in":
+            unitArray[0] = quantity
+        if type == "ar":
+            unitArray[1] = quantity
+        if type == "ta":
+            unitArray[2] = quantity
+        if type == "fi":
+            unitArray[3] = quantity
+        if type == "bo":
+            unitArray[4] = quantity
+        if type == "su":
+            unitArray[5] = quantity
+        if type == "de":
+            unitArray[6] = quantity
+        if type == "cr":
+            unitArray[7] = quantity
+        if type == "ai":
+            unitArray[8] = quantity
+        if type == "ba":
+            unitArray[9] = quantity
+    return unitArray
+
+
+
+
+
+def main():
+    testShip = Unit.BattleShip()
+    print(testShip.armor)
+    print(testShip.attack)
+
+
+main()
